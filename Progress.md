@@ -12,6 +12,13 @@ This file tracks all assignments and tasks completed or pending during the 100xD
 ### Week 1:
 -JS Foundation ✅
 -Basic JS APIs ✅
+-loops,functions and callbacks✅
+-Async,Await and promises
+
+---
+
+### Week 2:
+-Revision of Promises and Async JS
 
 ---
 
