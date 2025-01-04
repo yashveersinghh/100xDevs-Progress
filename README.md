@@ -7,6 +7,6 @@ This repository is dedicated to documenting my progress through the **100xDevs C
 
 ## 📈 Progress Tracking
 
-You can track my progress in the [progress.md](progress.md) file, which includes a detailed breakdown of weekly achievements and upcoming tasks.
+You can track my progress in the [Progress.md](Progress.md) file, which includes a detailed breakdown of weekly achievements and upcoming tasks.
 
 Feel free to explore this repository, and don't hesitate to share feedback or suggestions! 😊
