@@ -20,12 +20,22 @@ This file tracks all assignments and tasks completed or pending during the 100xD
 ### Week 2:
 -Revision of Promises and Async JS✅
 -Node.js runtime and HTTP Server✅
--Bash and Terminal
--Bash(Advance)
--Express with example
+-Bash and Terminal✅
+-Bash(Advance)✅
+-Express with example✅
 -Filter,Maps,Arrow Fns
 -Git/Github
 
 ---
+
+### week 3:
+-Middleware and Globlal Catches
+-Database and Auth
+-Zod Middleware (recap)
+-JWT and Auth (recap)
+-DOM Introduction
+
+---
+
 
 This progress tracker is updated regularly to reflect my completed and pending tasks.
