@@ -23,16 +23,16 @@ This file tracks all assignments and tasks completed or pending during the 100xD
 -Bash and Terminal✅
 -Bash(Advance)✅
 -Express with example✅
--Filter,Maps,Arrow Fns
--Git/Github
+-Filter,Maps,Arrow Fns✅
+-Git/Github✅
 
 ---
 
 ### week 3:
--Middleware and Globlal Catches
+-Middleware and Globlal Catches✅
 -Database and Auth
--Zod Middleware (recap)
 -JWT and Auth (recap)
+-Middleware (recap) and Assignments
 -DOM Introduction
 
 ---
