@@ -30,12 +30,16 @@ This file tracks all assignments and tasks completed or pending during the 100xD
 
 ### week 3:
 -Middleware and Globlal Catches✅
--Database and Auth
--JWT and Auth (recap)
--Middleware (recap) and Assignments
--DOM Introduction
+-Database and Auth✅
+-JWT and Auth (recap)✅
+-Middleware (recap) and Assignments✅
 
 ---
+
+### week 4:
+-DOM Introduction✅
+-React Foundation
+-Mongo Deep Dive
 
 
 This progress tracker is updated regularly to reflect my completed and pending tasks.
