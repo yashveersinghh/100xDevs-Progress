@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SumServer</title>
+</head>
+<body>
+    <script>
+        function populateDiv(){
+            const input1 = Number(document.getElementById("input1").value);
+            const input2 = Number(document.getElementById("input2").value);
+            const result = input1 + input2;
+            const element = document.getElementById("finalSum");
+            element.innerHTML = `The sum of the numbers is ${result}`; 
+        }
+    </script>
+    <input id="input1" style="display: flex; margin-bottom: 30px;" type="number" placeholder="1. Enter the number">
+    <input id="input2" type="number" placeholder="2. Enter the number">
+    <button style="display: flex; margin-top: 30px;" onclick="populateDiv()">
+        Calculate Sum
+    </button>
+    <div id="finalSum"></div>
+</body>
+</html>

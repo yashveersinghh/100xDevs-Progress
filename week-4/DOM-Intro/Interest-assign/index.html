@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterestCal</title>
+</head>
+<script>
+    async function InterestCal(){
+        const p = Number(document.getElementById("input1").value);
+        const r = Number(document.getElementById("input2").value);
+        const t = Number(document.getElementById("input3").value);
+
+        const result = (p * r * t)/100;
+        document.getElementById("finalAns").innerHTML = `The interest is ${result}`;
+
+        // const response = await fetch("https://sum-server.100xdevs.com/sum?a=1&b=2");
+        // const ans = await response.text();
+        // document.getElementById("finalAns").innerHTML = `The interest is ${ans}`;
+    }
+</script>
+<body>
+    <input id="input1" type="text" placeholder="principal"> <br><br>
+    <input id="input2" type="text" placeholder="rate"> <br><br>
+    <input id="input3" type="text" placeholder="time"> <br><br>
+    <button onclick="InterestCal()" >Calculate Interest</button> <br><br>
+    <div id="finalAns"></div>
+</body>
+</html>
