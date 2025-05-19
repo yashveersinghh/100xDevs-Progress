@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-using-DOM</title>
+</head>
+<script>
+    let globalId = 1;
+
+    function markAsDone(ListId){
+        const parent = document.getElementById(ListId);
+        parent.children[2].innerHTML = "Done!";
+    }
+
+    function createChild(task, detail, id){
+        const parent = document.createElement("div");
+
+        const child1 = document.createElement("div");
+        child1.innerHTML = task;
+
+        const child2 = document.createElement("div");
+        child2.innerHTML = detail;
+
+        const child3 = document.createElement("button");
+        child3.innerHTML = "Mark as done";
+        child3.setAttribute("onclick", `markAsDone(${id})`);
+
+        parent.appendChild(child1);
+        parent.appendChild(child2);
+        parent.appendChild(child3);
+        parent.setAttribute("id",id);
+        return parent;
+    }
+
+    function addTodo(){
+        const task = document.getElementById("task").value;
+        const detail = document.getElementById("detail").value;
+
+        document.getElementById("list").appendChild(createChild(task, detail, globalId++));
+    }
+
+    //state will always be an array 
+    //every element will have a title description and id
+
+    // function updatetodoFromstate(state){
+    //     const parent = document.getElementById("list");
+    //     parent.innerHTML = "";
+    //     for(i=0; i<state.length; i++){
+    //         const child = createChild(state[i].task, state[i].detail, state[i].id);
+    //         parent.appendChild(child);
+    //     }
+    // }
+    // updatetodoFromstate([
+    //     {
+    //         task: "go to gym",
+    //         detail: "from 9-10 am",
+    //         id: 1
+    //     },
+    //     {
+    //         task: "go to mess",
+    //         detail: "from 9-10 am",
+    //         id: 2
+    //     }
+    // ])
+
+    //if we have a server
+
+    // window.setInterval(async function(){
+    //     const res = await fetch("https://stateserver...")
+    //     const json = await res.json();
+    //     updatetodoFromState(json.list);
+    // }, 5000)
+</script>
+<body>
+    <input id="task" type="text" placeholder="Enter the task"> <br><br>
+    <input id="detail" type="text" placeholder="Description"> <br><br>
+    <button onclick="addTodo()">Add Todo</button> <br><br>
+
+    <div id="list"></div> <br>
+</body>
+</html>
