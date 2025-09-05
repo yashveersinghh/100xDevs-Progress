@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+let counter = 4;
+const App = () => {
+  const [todos, setTodos] = React.useState([{
+    id: 1,
+    title: "Learn React",
+    description: "Learn React from scratch",
+  },{
+    id: 2,
+    title: "Learn JS",
+    description: "Learn JS from scratch",
+  }, {
+    id: 3,
+    title: "Learn Python",
+    description: "Learn Python from scratch",
+  }]);
+  const addTodo = ()=> {
+    setTodos([...todos,{
+      id: counter++,
+      title: Math.random(),
+      description: Math.random()
+    }])
+  }
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Todo List</h1>
+      <button onClick={addTodo}>Add Todo</button>
+      {todos.map(function(todo){
+        return <div>
+          <Todo key={todo.id} title ={todo.title} description={todo.description}/>
+        </div>
+      })}
     </>
   )
 }
-
+const Todo = ({title, description})=>{
+  return <div>
+    <h1>
+      {title}
+    </h1>
+    <h5>
+      {description}
+    </h5>
+  </div>
+}
 export default App
