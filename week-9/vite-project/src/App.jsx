@@ -1,4 +1,24 @@
 import { useEffect, useState } from 'react'
+
+function useDebounce(value ,timeout) {
+  const [debouncedValue, setdebouncedValue] = useState(value);
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setdebouncedValue(value);
+    }, timeout);
+    return () => clearTimeout(timeoutId);
+  }, [value, timeout])
+  return debouncedValue;
+}
+function App(){
+  const [value, setValue] = useState("");
+  const DebouncedValue = useDebounce(value, 1000);
+  
+  return <div>
+    Debounced value is {DebouncedValue}
+    <input type="text" onChange={e=> setValue(e.target.value)} />
+  </div>
+}
 // import axios from 'axios'
 
 // function useInterval(fn, timeout){
