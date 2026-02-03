@@ -1,29 +1,76 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 
+// function useInterval(fn, timeout){
+//   useEffect(()=>{
+//     setInterval(() => {
+//       fn();
+//     }, timeout);
+//   })
+// }
+// function App() {
+//   const [count, setCount] = useState(0);
 
-function useIsOnline(){
-  const [isOnline, setIsOnline] = useState(window.navigator.isOnLine);
+//   useInterval(() => {
+//     setCount(c => c + 1);
+//   }, 1000)
 
-  useEffect(() => {
-    window.addEventListener('online', () => {
-      setIsOnline(true);
-    })
+//   return (
+//     <>
+//       Timer is at {count}
+//     </>
+//   )
+// }
 
-    window.addEventListener('offline', ()=>{
-      setIsOnline(false);
-    })
-  }, [])
-  return isOnline
-}
+// const useMousePointer = () => {
+//   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-function App() {
-  const isOnLine = useIsOnline();
-  if(isOnLine){
-    return <div> You are online </div>
-  }
-  return <div> You are offline </div>
-}
+//   const handleMouseMove = (e) => {
+//     setPosition({ x: e.clientX, y: e.clientY });
+//   };
+
+//   useEffect(() => {
+//     window.addEventListener('mousemove', handleMouseMove);
+//     return () => {
+//       window.removeEventListener('mousemove', handleMouseMove);
+//     };
+//   }, []);
+
+//   return position;
+// };
+
+// function App() {
+//   const mousePointer = useMousePointer();
+
+//   return (
+//     <>
+//       Your mouse position is {mousePointer.x} {mousePointer.y}
+//     </>
+//   )
+// }
+
+// function useIsOnline(){
+//   const [isOnline, setIsOnline] = useState(window.navigator.isOnLine);
+
+//   useEffect(() => {
+//     window.addEventListener('online', () => {
+//       setIsOnline(true);
+//     })
+
+//     window.addEventListener('offline', ()=>{
+//       setIsOnline(false);
+//     })
+//   }, [])
+//   return isOnline
+// }
+
+// function App() {
+//   const isOnLine = useIsOnline();
+//   if(isOnLine){
+//     return <div> You are online </div>
+//   }
+//   return <div> You are offline </div>
+// }
 
 // function useTodos(n) {
 //   const [todos, setTodos] = useState([])
