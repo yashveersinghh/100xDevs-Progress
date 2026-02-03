@@ -1,53 +1,77 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-function useTodos(n) {
-  const [todos, setTodos] = useState([])
-  const [loading, setLoading] = useState(true);
+
+function useIsOnline(){
+  const [isOnline, setIsOnline] = useState(window.navigator.isOnLine);
 
   useEffect(() => {
-    const value = setInterval(() => {
-      axios.get("https://sum-server.100xdevs.com/todos")
-        .then(res => {
-          setTodos(res.data.todos);
-          setLoading(false);
-        })
-    }, n * 1000)
-  
-    axios.get("https://sum-server.100xdevs.com/todos")
-      .then(res => {
-        setTodos(res.data.todos);
-        setLoading(false);
-      })
+    window.addEventListener('online', () => {
+      setIsOnline(true);
+    })
 
-    return () => {
-      clearInterval(value)
-    }
-  }, [n])
-
-  return {todos, loading};
+    window.addEventListener('offline', ()=>{
+      setIsOnline(false);
+    })
+  }, [])
+  return isOnline
 }
 
 function App() {
-  const {todos, loading} = useTodos(10);
-
-  if (loading) {
-    return <div> loading... </div>
+  const isOnLine = useIsOnline();
+  if(isOnLine){
+    return <div> You are online </div>
   }
-
-  return (
-    <>
-      {todos.map(todo => <Track todo={todo} />)}
-    </>
-  )
+  return <div> You are offline </div>
 }
 
-function Track({ todo }) {
-  return <div>
-    {todo.title}
-    <br />
-    {todo.description}
-  </div>
-}
+// function useTodos(n) {
+//   const [todos, setTodos] = useState([])
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     const value = setInterval(() => {
+//       axios.get("https://sum-server.100xdevs.com/todos")
+//         .then(res => {
+//           setTodos(res.data.todos);
+//           setLoading(false);
+//         })
+//     }, n * 1000)
+  
+//     axios.get("https://sum-server.100xdevs.com/todos")
+//       .then(res => {
+//         setTodos(res.data.todos);
+//         setLoading(false);
+//       })
+
+//     return () => {
+//       clearInterval(value)
+//     }
+//   }, [n])
+
+//   return {todos, loading};
+// }
+
+// function App() {
+//   const {todos, loading} = useTodos(10);
+
+//   if (loading) {
+//     return <div> loading... </div>
+//   }
+
+//   return (
+//     <>
+//       {todos.map(todo => <Track todo={todo} />)}
+//     </>
+//   )
+// }
+
+// function Track({ todo }) {
+//   return <div>
+//     {todo.title}
+//     <br />
+//     {todo.description}
+//   </div>
+// }
 
 export default App
