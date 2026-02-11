@@ -1,11 +1,29 @@
-function runsAfter1S(fn: () => void){
-    setInterval(() => {
-        fn();
-    }, 1000);
+interface user {
+    firstName: string;
+    age: number;
 }
-runsAfter1S(function(){
-    console.log("Hello World");
+function isLegal (user: user){
+    if(user.age >= 18){
+        return true;
+    } else{
+        return false;
+    }
+}
+
+isLegal({
+    firstName: "yash",
+    age: 18
 })
+
+
+// function runsAfter1S(fn: () => void){
+//     setInterval(() => {
+//         fn();
+//     }, 1000);
+// }
+// runsAfter1S(function(){
+//     console.log("Hello World");
+// })
 
 
 // function auth(age: number): boolean{
