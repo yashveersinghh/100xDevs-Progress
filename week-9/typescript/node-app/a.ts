@@ -1,19 +1,69 @@
-interface user {
-    firstName: string;
-    age: number;
-}
-function isLegal (user: user){
-    if(user.age >= 18){
-        return true;
-    } else{
-        return false;
-    }
-}
+//ARRAYS IN TS
+// type numArr = number[]
+// function maxArr(arr: numArr){
+//     let max = arr[0];
+//     for (let i=0; i<arr.length; i++){
+//         if (arr[i] > max){
+//             max = arr[i];
+//         }
+//     }
+//     return max;
+// }
+// maxArr([1, 2, 3, 4, 5]);
 
-isLegal({
-    firstName: "yash",
-    age: 18
-})
+
+//INTERSECTION
+// type emp ={
+//     name: string;
+//     age: number;
+// }
+// interface manager {
+//     department: string;
+// }
+// type managerEmp = emp & manager;
+
+// const yash: managerEmp = {
+//     name: "yash",
+//     age: 18,
+//     department: "IT"
+// }
+
+
+//UNION
+// type greetArg = string | number | boolean;
+
+// function greet(arg: greetArg){
+
+// }
+// greet("yash");
+// greet(1);
+// greet(true);
+
+
+// type user ={
+//     firstName: string;
+//     age: number;
+//     email?: string;
+// }
+
+
+// interface user {
+//     firstName: string;
+//     age: number;
+//     email?: string;
+// }
+// function isLegal (user: user){
+//     if(user.age >= 18){
+//         return true;
+//     } else{
+//         return false;
+//     }
+// }
+
+// isLegal({
+//     firstName: "yash",
+//     age: 18
+// })
 
 
 // function runsAfter1S(fn: () => void){
