@@ -1,3 +1,35 @@
+//GENERICS
+// function identity<T>(arg: T){
+//     return arg;
+// }
+// let opt1 = identity<string>("Hello World");
+// let opt2 = identity<number>(1);
+// opt1.toUpperCase();
+
+
+//ENUMS
+// enum direction {
+//     up, //= "up",
+//     down, //= "down",
+//     left, //= "left",
+//     right //= "right"
+// }
+// function move(dir: direction){
+//     if(dir == direction.up){
+
+//     }
+// }
+
+// move(direction.down);
+// console.log(direction.down);
+
+// enum ResponseStatus {
+//     success = 200,
+//     notFound = 404,
+//     serverError = 500
+// }
+
+
 //ARRAYS IN TS
 // type numArr = number[]
 // function maxArr(arr: numArr){
