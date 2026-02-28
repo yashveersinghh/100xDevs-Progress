@@ -4,9 +4,9 @@ import "dotenv/config";
 import { defineConfig } from "prisma/config";
 
 export default defineConfig({
-  schema: "./schema.prisma",
+  schema: "./src/prisma/schema.prisma",
   migrations: {
-    path: "./migrations",
+    path: "./src/prisma/migrations",
   },
   datasource: {
     url: "postgresql://postgres:mysecretpassword@localhost:5432/postgres",
