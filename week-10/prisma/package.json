@@ -12,8 +12,14 @@
   "description": "",
   "devDependencies": {
     "@types/node": "^25.3.2",
+    "@types/pg": "^8.18.0",
     "prisma": "^7.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.4.2",
+    "@prisma/client": "^7.4.2",
+    "pg": "^8.19.0"
   }
 }
